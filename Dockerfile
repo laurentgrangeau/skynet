@@ -8,4 +8,4 @@ FROM alpine:3.6 as runner
 WORKDIR /root
 COPY --from=builder /go/src/github.com/docker/infrakit/build/* ./
 
-ENTRYPOINT [ "./infrakit" ]
+VOLUME [ "/root/.infrakit" ]
