@@ -1,0 +1,4 @@
+{
+    "Managers" : {{ include "manager.json" }},
+    "Workers"  : {{ include "worker.json" }}
+}
