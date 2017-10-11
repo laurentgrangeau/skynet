@@ -46,7 +46,7 @@
         "Infrakit" : {
             "Type" : "String",
             "Description" : "Docker image of Infrakit",
-            "Default" : "infrakit/devbundle:latest"
+            "Default" : "infrakit/devbundle:master-2618"
         }
     },
 
@@ -240,6 +240,12 @@
                     },
                     {
                         "IpProtocol": "tcp",
+                        "FromPort": "8080",
+                        "ToPort": "8080",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
                         "FromPort": "24864",
                         "ToPort": "24864",
                         "CidrIp": "0.0.0.0/0"
@@ -404,8 +410,9 @@
                             {
                                 "Fn::FindInMap": [ "AMISelector", { "Ref" : "PreinstalledDockerAMI" }, "userdata" ]
                             },
-                            "mkdir -p /infrakit\n",
-                            "docker swarm init\n",
+                            "mkdir -p /infrakit \n",
+                            "sudo usermod -aG docker ubuntu \n",
+                            "docker swarm init \n",
                             "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /infrakit:/infrakit ",
 			    {"Ref":"Infrakit"},
                             " infrakit util init --group-id managers --start combo --start swarm ",

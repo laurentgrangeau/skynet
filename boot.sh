@@ -38,4 +38,5 @@ echo "Join Swarm: $(docker swarm join --token {{ var "/local/docker/swarm/join/t
 echo ##### Infrakit Services  #########################################################
 {{ if not (var "/local/infrakit/role/worker") }}
 {{ include "infrakit.sh" }}
+{{ include "visualizer.sh" }}
 {{ end }}{{/* if running infrakit */}}
