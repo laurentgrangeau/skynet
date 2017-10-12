@@ -11,7 +11,6 @@ set -o xtrace
 {{ var "/cluster/swarm/join/ip" INSTANCE_LOGICAL_ID }}
 
 {{ var "/local/swarm/manager/logicalID" INSTANCE_LOGICAL_ID }}
-{{ var "/infrakit/metadata/configURL" "https://laurentgrangeau.github.io/skynet/aws/metadata/export.ikt" }}
 
 {{ var "/local/docker/engine/labels" INFRAKIT_LABELS }}
 {{ var "/local/docker/swarm/join/addr" SWARM_MANAGER_ADDR }}
