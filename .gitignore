@@ -1,3 +1,5 @@
 *cmdline
 *.img
 *kernel
+*raw
+*pub

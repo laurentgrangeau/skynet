@@ -16,7 +16,7 @@
                 "DisableApiTermination": null,
                 "EbsOptimized": null,
                 "IamInstanceProfile": null,
-                "ImageId": "{{ var `/local/amiID` }}",
+                "ImageId": "ami-7764db18",
                 "InstanceInitiatedShutdownBehavior": null,
                 "InstanceType": "{{ var `/local/instanceType` }}",
                 "KeyName": "{{ var `/local/keyName` }}",
