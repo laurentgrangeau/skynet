@@ -8,4 +8,4 @@ docker pull laurentgrangeau/skynet-terminator:latest
 docker tag laurentgrangeau/skynet-terminator:latest localhost:5000/skynet-terminator:latest
 docker push localhost:5000/skynet-terminator:latest
 docker service create --name skynet-visualizer --network multihostnetwork --publish 8080:8080 --constraint node.role==manager --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock localhost:5000/visualizer:latest
-docker service create --name skynet-terminator --network multihostnetwork --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock localhost:5000/skynet-terminator:latest
+#docker service create --name skynet-terminator --network multihostnetwork --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock localhost:5000/skynet-terminator:latest
